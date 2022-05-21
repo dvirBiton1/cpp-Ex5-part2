@@ -185,7 +185,7 @@ namespace ariel
     {
         for (auto *i = root.begin_level_order(); i != root.end_level_order(); i++)
         {
-            out << (*i);
+            out << (*i) << ", ";
         }
         return out;
     }
