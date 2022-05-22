@@ -104,7 +104,7 @@ namespace ariel
             b_print_level_order.push_back(" ├─");
             s += " │ ";
         }
-        b_print_level_order.push_back(node.name);
+        b_print_level_order.push_back(node.name + "\n");
         for (size_t i = 0; i < node.sones.size(); i++)
         {
             bool j = (i == node.sones.size() - 1);
@@ -183,9 +183,9 @@ namespace ariel
 
     ostream &operator<<(ostream &out, OrgChart &root)
     {
-        for (auto *i = root.begin_level_order(); i != root.end_level_order(); i++)
+        for (auto *i = root.begin_print_level_order(); i != root.end_print_level_order(); i++)
         {
-            out << (*i) << ", ";
+            out << (*i);
         }
         return out;
     }

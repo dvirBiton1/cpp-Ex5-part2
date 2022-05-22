@@ -25,7 +25,6 @@ namespace ariel
         void fill_q_for_reverse_order(Node &node);
         void fill_q_for_preorder(Node &node);
         vector<string> b_level_order;
-        vector<string> b_level_order2;
         vector<string> b_print_level_order;
         vector<string> b_reverse_order;
         vector<string> b_preorder;
