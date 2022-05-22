@@ -14,11 +14,17 @@ namespace ariel
     }
     OrgChart &OrgChart::add_root(string name)
     {
+        if(name.empty()){
+           throw invalid_argument("this name is empty!");
+        }
         this->root.name = move(name);
         return *this;
     }
     OrgChart &OrgChart::add_sub(string father, string son)
     {
+        if(son.empty()){
+            throw invalid_argument("this son is empty!");
+        }
         if (!find_sub(this->root, father, son))
         {
             throw invalid_argument("you dont have this father");
