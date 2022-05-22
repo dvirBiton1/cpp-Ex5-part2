@@ -12,17 +12,17 @@ clang++-9 -std=c++2a -Werror -Wsign-conversion -Isources --compile TestRunner.cp
 curl https://raw.githubusercontent.com/renanarimon/cpp_5b_test/master/Test.cpp > StudentTest1.cpp
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  5001  100  5001    0     0  24514      0 --:--:-- --:--:-- --:--:-- 24635
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  5004  100  5004    0     0  23715      0 --:--:-- --:--:-- --:--:-- 23715
 clang++-9 -std=c++2a -Werror -Wsign-conversion -Isources --compile StudentTest1.cpp -o StudentTest1.o
 curl https://raw.githubusercontent.com/ShauliTaragin/Orgchart-A/main/Test.cpp > StudentTest2.cpp
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 11779  100 11779    0     0  50123      0 --:--:-- --:--:-- --:--:-- 50123
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 11779  100 11779    0     0  49491      0 --:--:-- --:--:-- --:--:-- 49491
 clang++-9 -std=c++2a -Werror -Wsign-conversion -Isources --compile StudentTest2.cpp -o StudentTest2.o
 curl https://raw.githubusercontent.com/dvirGev/CPP--Ex5-par1/main/Test.cpp > StudentTest3.cpp
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 18625  100 18625    0     0  77282      0 --:--:-- --:--:-- --:--:-- 77282
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 18855  100 18855    0     0  84551      0 --:--:-- --:--:-- --:--:-- 84932
 clang++-9 -std=c++2a -Werror -Wsign-conversion -Isources --compile StudentTest3.cpp -o StudentTest3.o
 clang++-9 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/OrgChart.cpp -o objects/OrgChart.o
 clang++-9 -std=c++2a -Werror -Wsign-conversion -Isources TestRunner.o StudentTest1.o StudentTest2.o StudentTest3.o objects/OrgChart.o -o test
@@ -56,9 +56,9 @@ clang++-9 -std=c++2a -Werror -Wsign-conversion -Isources TestRunner.o StudentTes
 
 ===============================================================================
 [doctest] test cases:     14 |     14 passed |      0 failed |      0 skipped
-[doctest] assertions:    660 |    660 passed |      0 failed |
+[doctest] assertions:    662 |    662 passed |      0 failed |
 [doctest] Status: SUCCESS!
---- 9 seconds
+--- 8 seconds
 ### Score 3: 100
 
 
@@ -68,15 +68,15 @@ clang-tidy sources/OrgChart.cpp -extra-arg=-std=c++2a -checks=bugprone-*,clang-a
 4162 warnings generated.
 Suppressed 4162 warnings (4162 in non-user code).
 Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
---- 14 seconds
+--- 13 seconds
 ### Score 4: 100
 
 
 ### Check 5: valgrind should run without errors
 ! timeout 60 make -f Makefile valgrind
 valgrind --tool=memcheck -v --leak-check=full --show-leak-kinds=all  --error-exitcode=99 ./test 2>&1 | { egrep "lost| at " || true; }
-==412==     in use at exit: 0 bytes in 0 blocks
---- 15 seconds
+==3269==     in use at exit: 0 bytes in 0 blocks
+--- 14 seconds
 ### Score 5: 100
 
 
