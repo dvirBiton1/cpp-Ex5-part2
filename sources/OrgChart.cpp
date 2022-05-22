@@ -69,7 +69,6 @@ namespace ariel
         for (size_t i = 0; i < q.size(); i++)
         {
             Node *tmp = q[i];
-            b_level_order.push_back(tmp->name);
             for (int j = int(tmp->sones.size() - 1); j >= 0; j--)
             {
                 q.push_back(&(tmp->sones[(size_t)j]));
