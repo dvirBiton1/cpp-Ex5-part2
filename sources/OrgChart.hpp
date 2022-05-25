@@ -31,6 +31,10 @@ namespace ariel
 
     public:
         OrgChart();
+        OrgChart(OrgChart& org) = default;
+        OrgChart(OrgChart&& org) = default;
+        OrgChart& operator=(OrgChart&&) = default;
+        OrgChart& operator=(const OrgChart& org) = default;
         OrgChart &add_root(string name);
         OrgChart &add_sub(string father, string son);
 
